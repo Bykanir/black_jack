@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class Deck
-  CARDS = %w[2 3 4 5 6 7 8 9 10 J Q K A].freeze
-  SUITS = %w[+ <> ^ <3].freeze
+require_relative 'card'
 
+class Deck
+  
   attr_accessor :deck
   attr_reader :points
 
@@ -13,7 +13,7 @@ class Deck
 
   def get_card(player)
     card = deck.sample
-    player.cards << card
+    player.hand.cards << card
     delete_card(card)
   end
 
@@ -24,8 +24,8 @@ class Deck
   end
 
   def build_deck
-    CARDS.map do |card|
-      SUITS.collect { |suit| card + suit }
+    Card::CARDS.map do |card|
+      Card::SUITS.collect { |suit| card + suit }
     end.flatten
   end
 end

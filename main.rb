@@ -1,19 +1,17 @@
 # frozen_string_literal: true
 
-require_relative 'app'
+require_relative 'interface'
 
 puts 'Hello! What is you name?'
-app = App.new
+interface = Interface.new
 puts 'Welcome to the game!'
 
 loop do
-  app.start_game
+  interface.start_game
 
-  random = rand(1..2)
+  interface.game
 
-  app.game(random)
-
-  app.play_again
+  interface.play_again
   gets.chomp.to_i == 1 ? next : break
 end
 puts 'Good bay!'

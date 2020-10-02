@@ -12,12 +12,12 @@ class Dealer < Player
 
   def hide_cards
     puts 'Dealer'
-    puts "Cards: #{(cards.map { '* ' })}"
+    puts "Cards: #{(hand.cards.map { '* ' })}"
   end
 
   def move(deck)
     puts 'Dealer move'
-    if points < 17 && cards.size < 3
+    if hand.points < 17 && hand.cards.size < 3
       puts 'Dealer draws card'
       deck.get_card(self)
       hide_cards

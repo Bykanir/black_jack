@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'dealer.rb'
-require_relative 'gamer.rb'
-require_relative 'deck.rb'
+require_relative 'dealer'
+require_relative 'gamer'
+require_relative 'deck'
+require_relative 'app'
